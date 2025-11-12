@@ -14,3 +14,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* Custom CSS for hover dropdowns */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.navbar .dropdown .dropdown-toggle {
+  cursor: pointer;
+}

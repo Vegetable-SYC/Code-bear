@@ -5,7 +5,7 @@ function Home() {
     <div className="container my-5">
       <div className="p-5 mb-4 bg-light rounded-3">
         <div className="container-fluid py-5">
-          <h1 className="display-5 fw-bold">欢迎来到我的工作室</h1>
+          <h1 className="display-5 fw-bold">欢迎来到源码熊电子工作室</h1>
           <p className="col-md-8 fs-4">这里是工作室的介绍，展示我们的理念和最新动态。</p>
           <button className="btn btn-primary btn-lg" type="button">了解更多</button>
         </div>
