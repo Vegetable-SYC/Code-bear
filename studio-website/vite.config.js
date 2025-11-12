@@ -5,4 +5,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   base: '/Code-bear/', // 对应你的仓库名称
+  build: {
+    rollupOptions: {
+      output: {
+        charset: 'utf8',
+      },
+    },
+  },
 });
