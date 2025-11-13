@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
       {/* Hero Section - bg-light */}
-      <div className="py-5 custom-container-80 rounded-3 my-1"> {/* Changed my-2 to my-1 */}
+      <div className="py-5 custom-container-80 rounded-3 mb-5"> {/* Changed my-2 to my-1 */}
         <div className="p-5 bg-light border rounded-3"> {/* New: Bordered content with padding and background */}
           <h1 className="display-5 fw-bold">欢迎来到源码熊电子工作室</h1>
           <p className="col-md-8 fs-4">这里是工作室的介绍，展示我们的理念和最新动态。</p>
@@ -16,7 +16,7 @@ function Home() {
       </div>
 
       {/* Services and Projects Links Section - White Background */}
-      <div className="my-1 custom-container-80"> {/* Changed my-2 to my-1 */}
+      <div className="mb-5 custom-container-80"> {/* Changed my-2 to my-1 */}
         <div className="row align-items-md-stretch">
           <div className="col-md-6 mb-3 mb-md-0">
             <div className="h-100 p-5 text-white bg-dark rounded-3">
@@ -40,7 +40,7 @@ function Home() {
       </div>
 
       {/* New Project Promotion Section - bg-light */}
-      <div className="custom-container-80 bg-light py-5 rounded-3 mb-0"> {/* Removed my-1, added mb-0 */}
+      <div className="custom-container-80 bg-light py-5 rounded-3 mb-5"> {/* Removed my-1, added mb-0 */}
         <div className="card mb-0"> {/* Added mb-0 to card */}
           <div className="row g-0">
             <div className="col-md-4">
@@ -64,7 +64,7 @@ function Home() {
       </div>
 
       {/* Video Promotion Section - bg-light */}
-      <div className="py-5 custom-container-80 rounded-3 mt-0"> {/* Removed my-1, added mt-0 */}
+      <div className="py-5 custom-container-80 rounded-3 mb-5"> {/* Removed my-1, added mt-0 */}
         <div className="p-4 bg-light border rounded-3"> {/* New: Bordered content with padding and background */}
           <h2 className="display-6 fw-bold text-center mb-0">配套视频教程</h2> {/* Changed mb-4 to mb-0 */}
           <div className="row align-items-center">
