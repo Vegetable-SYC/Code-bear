@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import bearImage from '../assets/bear.jpg';
+import { images } from '../assets/images';
 
 function Home() {
   return (
@@ -44,7 +44,7 @@ function Home() {
         <div className="card mb-0"> {/* Added mb-0 to card */}
           <div className="row g-0">
             <div className="col-md-4">
-              <img src={bearImage} className="img-fluid rounded-start h-100" alt="新项目" style={{ objectFit: 'cover' }} />
+              <img src={images.bear} className="img-fluid rounded-start h-100" alt="新项目" style={{ objectFit: 'cover' }} />
             </div>
             <div className="col-md-8">
               <div className="card-body">

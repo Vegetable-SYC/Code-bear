@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import bearImage from '../assets/bear.jpg';
+import { images } from '../assets/images';
 
 function Footer() {
   const [isContactModalOpen, setContactModalOpen] = useState(false);
@@ -46,7 +46,7 @@ function Footer() {
             <button className="modal-close-btn" onClick={closeModal}>&times;</button>
             <h3 className="text-center">联系我们</h3>
             <p className="text-center mt-3">请扫描下方二维码添加我的微信</p>
-            <img src={bearImage} alt="微信二维码占位符" className="modal-qr-code" />
+            <img src={images.bear} alt="微信二维码占位符" className="modal-qr-code" />
           </div>
         </div>
       )}
