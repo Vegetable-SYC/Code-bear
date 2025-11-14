@@ -20,13 +20,14 @@ import DownloadsNavItem from './NavItems/DownloadsNavItem';
 import OnlineToolsNavItem from './NavItems/OnlineToolsNavItem';
 import ProjectsNavItem from './NavItems/ProjectsNavItem';
 import TeamNavItem from './NavItems/TeamNavItem';
+import bearImage from '../assets/bear.jpg';
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src="/bear.jpg" alt="源码熊电子工作室 Logo" />
+          <img src={bearImage} alt="源码熊电子工作室 Logo" />
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
