@@ -1,5 +1,7 @@
 // src/assets/images/index.ts
 import bearJpg from './bear.jpg';
+import carouselPlaceholder1 from './carousel-placeholder-1.svg';
+import carouselPlaceholder2 from './carousel-placeholder-2.svg';
 
 /**
  * A centralized object to export all image assets.
@@ -12,4 +14,6 @@ import bearJpg from './bear.jpg';
  */
 export const images = {
   bear: bearJpg,
+  carouselPlaceholder1,
+  carouselPlaceholder2,
 };
