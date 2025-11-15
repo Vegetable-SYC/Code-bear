@@ -10,7 +10,7 @@ function Support() {
         <Col md={10} lg={8}>
           <Card className="text-center shadow-lg">
             <Card.Body className="p-5">
-              <h1 className="fw-bold">技术支持</h1>
+              <h1 className="fw-bold">支持与定制</h1>
               <p className="lead text-muted mb-4">
                 遇到技术问题？希望与我们深入交流？欢迎加入我们的技术支持群！
               </p>
@@ -45,7 +45,7 @@ function Support() {
         <Col md={10} lg={8}>
           <Card className="text-center shadow-lg">
             <Card.Body className="p-5">
-              <h1 className="fw-bold">一对一定制服务</h1>
+              <h1 className="fw-bold">定制服务</h1>
               <p className="lead text-muted mb-4">
                 需要个性化的软硬件解决方案？我们提供专业的一对一定制开发服务。
               </p>
