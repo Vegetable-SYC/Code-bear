@@ -1,9 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { images } from '../assets/images';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Container, Row, Col } from 'react-bootstrap';
+import { ArrowRight } from 'react-bootstrap-icons';
+
+// Data for the carousel and its feature cards
+const carouselData = [
+  {
+    image: images.carouselImage1,
+    alt: 'A2主控板',
+    caption: 'Code-bear A2 智能主控板',
+    link: '/projects',
+    cards: [
+      { title: '强大的主控', text: '搭载A2芯片，性能卓越，为您的项目提供强大动力。' },
+      { title: '丰富的外设', text: '支持多种传感器和执行器，轻松扩展无限可能。' },
+      { title: '完善的生态', text: '提供完整的开发工具、文档和社区教程支持。' },
+    ]
+  },
+  {
+    image: images.carouselImage2,
+    alt: '智能小车',
+    caption: '模块化智能小车套件',
+    link: '/projects',
+    cards: [
+      { title: '智能循迹', text: '配备高精度红外传感器，实现稳定、精准的循迹功能。' },
+      { title: '蓝牙遥控', text: '通过手机App即可轻松控制，体验驾驶乐趣。' },
+    ]
+  },
+  {
+    image: images.carouselImage3,
+    alt: '物联网方案',
+    caption: '一站式物联网解决方案',
+    link: '/projects',
+    cards: [
+      { title: '远程监控', text: '无论身在何处，都能随时随地查看设备状态。' },
+    ]
+  }
+];
 
 function Home() {
+  // State for the carousel
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const handleSelect = (selectedIndex: number) => {
+    setActiveIndex(selectedIndex);
+  };
+
   // State for the interactive "Advantages" section
   const [hoveredAdvantage, setHoveredAdvantage] = React.useState(0);
   const [displayedAdvantage, setDisplayedAdvantage] = React.useState(0);
@@ -27,44 +68,74 @@ function Home() {
   return (
     <>
       {/* Hero Section with Carousel */}
-      <Carousel className="hero-carousel" interval={3000}>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 carousel-img"
-            src={images.carouselImage1}
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <Link to="/projects" className="btn btn-primary btn-lg carousel-button">
-              了解更多
-            </Link>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 carousel-img"
-            src={images.carouselImage2}
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-            <Link to="/projects" className="btn btn-primary btn-lg carousel-button">
-              了解更多
-            </Link>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 carousel-img"
-            src={images.carouselImage3}
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-            <Link to="/projects" className="btn btn-primary btn-lg carousel-button">
-              了解更多
-            </Link>
-          </Carousel.Caption>
-        </Carousel.Item>
+      <Carousel 
+        className="hero-carousel" 
+        interval={5000} 
+        activeIndex={activeIndex}
+        onSelect={handleSelect}
+      >
+        {carouselData.map((slide, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100 carousel-img"
+              src={slide.image}
+              alt={slide.alt}
+            />
+            <Carousel.Caption>
+              <h3>{slide.caption}</h3>
+              <Link to={slide.link} className="btn btn-primary btn-lg carousel-button">
+                了解更多
+              </Link>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
       </Carousel>
+
+      {/* Feature Cards Section */}
+      <Container className="my-5">
+        <Row className="justify-content-center g-4">
+          {carouselData[activeIndex].cards.map((card, index) => (
+            <Col md={6} lg={4} key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+              <a href="#" className="feature-card">
+                <div className="feature-card-title">
+                  <span>{card.title}</span>
+                  <ArrowRight className="feature-card-arrow" />
+                </div>
+                <span className="feature-card-text">{card.text}</span>
+              </a>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+      {/* ===== About Us Section - Hero Style ===== */}
+      <div className="py-5" style={{ 
+          background: 'linear-gradient(45deg, #2a2a2a, #3c3c3c)', 
+          color: '#f0f0f0' 
+      }}>
+          <div className="container text-center py-5" data-aos="fade-in">
+              <img 
+                  src={images.bear} 
+                  className="mb-4" 
+                  alt="源码熊工作室 Logo" 
+                  style={{ maxWidth: '150px', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.4))' }} 
+              />
+              <h1 className="display-5 fw-bold">源码熊电子工作室</h1>
+              <div className="col-lg-8 mx-auto">
+                  <p className="lead mb-4">
+                      始于2024年，我们致力于提供卓越的软硬件解决方案和开源技术分享。我们是一群对技术充满热情的工程师和设计师，相信代码和硬件的力量可以改变世界。
+                  </p>
+                  <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                      <Link to="/team" className="btn btn-primary btn-lg px-4 gap-3">
+                          了解更多关于我们
+                      </Link>
+                      <Link to="/projects" className="btn btn-outline-light btn-lg px-4">
+                          查看我们的项目
+                      </Link>
+                  </div>
+              </div>
+          </div>
+      </div>
 
       <div className="container">
         {/* Section 1: Our New Products */}

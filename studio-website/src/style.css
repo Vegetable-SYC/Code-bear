@@ -403,3 +403,53 @@ footer.bg-dark {
     transform: translateX(0);
   }
 }
+
+/* --- Feature Cards (Under Carousel) --- */
+.feature-card {
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: left;
+  text-decoration: none;
+  color: var(--c-text-primary);
+  display: block;
+  height: 100%;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.feature-card-title {
+  color: var(--c-primary); /* Dark Blue */
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature-card-text {
+  color: var(--c-text-primary); /* Black */
+  margin-top: 0.5rem;
+  text-decoration: none;
+  display: block; /* Ensure it's a block for properties to apply */
+  transition: text-decoration var(--transition-speed) ease;
+}
+
+.feature-card:hover .feature-card-text {
+  text-decoration: underline;
+}
+
+.feature-card-arrow {
+  font-size: 1.2rem;
+  transition: transform var(--transition-speed) ease;
+}
+
+.feature-card:hover .feature-card-arrow {
+  transform: translateX(5px);
+}
