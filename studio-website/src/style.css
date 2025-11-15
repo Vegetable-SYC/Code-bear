@@ -238,7 +238,7 @@ footer.bg-dark {
 }
 
 .hero-carousel .carousel-item img {
-  object-fit: contain;
+  object-fit: cover;
   height: 100%;
   width: 100%;
 }
@@ -280,6 +280,7 @@ footer.bg-dark {
   transform: translateY(20px);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
+  margin-top: 20px;
 }
 
 .carousel-item.active .carousel-button {

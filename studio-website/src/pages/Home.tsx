@@ -8,32 +8,50 @@ import { ArrowRight } from 'react-bootstrap-icons';
 const carouselData = [
   {
     image: images.carouselImage1,
-    alt: 'A2主控板',
-    caption: 'Code-bear A2 智能主控板',
+    alt: 'Code-bear STM32系列A1开发板',
+    caption: 'Code-bear STM32系列A1开发板',
     link: '/projects',
     cards: [
-      { title: '强大的主控', text: '搭载A2芯片，性能卓越，为您的项目提供强大动力。' },
+      { title: '强大的主控', text: '搭载STM32芯片，性能卓越，为您的项目提供强大动力。' },
       { title: '丰富的外设', text: '支持多种传感器和执行器，轻松扩展无限可能。' },
       { title: '完善的生态', text: '提供完整的开发工具、文档和社区教程支持。' },
     ]
   },
   {
     image: images.carouselImage2,
-    alt: '智能小车',
-    caption: '模块化智能小车套件',
+    alt: 'Code-bear STM32系列A2开发板',
+    caption: 'Code-bear STM32系列A2开发板',
     link: '/projects',
     cards: [
-      { title: '智能循迹', text: '配备高精度红外传感器，实现稳定、精准的循迹功能。' },
-      { title: '蓝牙遥控', text: '通过手机App即可轻松控制，体验驾驶乐趣。' },
+        { title: '更强性能', text: '相较于A1，A2拥有更强的性能和更多的外设接口。' },
+        { title: '模块化设计', text: '核心板和底板分离设计，方便用户根据需求定制。' },
     ]
   },
   {
     image: images.carouselImage3,
-    alt: '物联网方案',
-    caption: '一站式物联网解决方案',
+    alt: 'Code-bear B1编码器TT电机',
+    caption: 'Code-bear B1编码器TT电机',
     link: '/projects',
     cards: [
-      { title: '远程监控', text: '无论身在何处，都能随时随地查看设备状态。' },
+      { title: '高精度编码器', text: '配备高精度霍尔编码器，实现精准的速度和位置闭环控制。' },
+    ]
+  },
+  {
+    image: images.carouselImage1, // Placeholder image 1
+    alt: 'Code-bear C1全向轮小车',
+    caption: 'Code-bear C1全向轮小车',
+    link: '/projects',
+    cards: [
+      { title: '开源项目', text: '基于STM32的开源全向轮小车项目。' },
+    ]
+  },
+  {
+    image: images.carouselImage2, // Placeholder image 2
+    alt: 'Code-bear D1Bear-Link',
+    caption: 'Code-bear D1Bear-Link',
+    link: '/projects',
+    cards: [
+      { title: '多功能工具', text: '多功能调试器和下载器。' },
     ]
   }
 ];
@@ -53,7 +71,8 @@ function Home() {
   const advantages = [
     { title: '技术全面', description: '我们精通从前端到后端的全栈技术，以及嵌入式硬件设计，能够为您提供一站式解决方案。' },
     { title: '开源精神', description: '我们拥抱开源，积极贡献社区，所有项目都提供完善的文档和教程，方便您学习和使用。' },
-    { title: '客户至上', description: '我们始终将客户的需求放在第一位，提供快速、专业的技术支持和售后服务。' },
+    { title: '优质服务', description: '我们会对自己的产品负责。' },
+    { title: '配套教程', description: '提供详细的视频和文档教程，帮助您快速上手。' },
   ];
 
   React.useEffect(() => {
@@ -81,7 +100,7 @@ function Home() {
               src={slide.image}
               alt={slide.alt}
             />
-            <Carousel.Caption>
+            <Carousel.Caption className="carousel-caption-custom">
               <h3>{slide.caption}</h3>
               <Link to={slide.link} className="btn btn-primary btn-lg carousel-button">
                 了解更多
@@ -92,7 +111,7 @@ function Home() {
       </Carousel>
 
       {/* Feature Cards Section */}
-      <Container className="my-5">
+      <Container className="my-5" data-aos="fade-up">
         <Row className="justify-content-center g-4">
           {carouselData[activeIndex].cards.map((card, index) => (
             <Col md={6} lg={4} key={index} data-aos="fade-up" data-aos-delay={index * 100}>
@@ -178,8 +197,8 @@ function Home() {
         {/* Section 2: Our Advantages (Interactive) */}
         <div id="advantages" className="custom-container-80 my-5 py-5" data-aos="fade-up">
           <div className="text-center mb-5">
-            <h2 className="fw-bold">我们的优势</h2>
-            <p className="text-muted">我们为何与众不同</p>
+            <h2 className="fw-bold">我们的特色</h2>
+            <p className="text-muted">我们提供的服务与支持</p>
           </div>
           <div>
             <div className="list-group list-group-horizontal-lg mb-4">
@@ -234,8 +253,8 @@ function Home() {
         {/* Section 4: Latest Announcements */}
         <div id="announcements" className="custom-container-80 my-5 py-5" data-aos="fade-up">
           <div className="text-center mb-5">
-            <h2 className="fw-bold">最新公告</h2>
-            <p className="text-muted">了解我们的最新动态和活动</p>
+            <h2 className="fw-bold">掌握我们的最新动态</h2>
+            <p className="text-muted">关注我们的项目更新、活动和教程发布</p>
           </div>
           <div className="list-group">
             <a href="#" className="list-group-item list-group-item-action">
